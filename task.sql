@@ -44,10 +44,11 @@ CREATE TABLE Users (
     ID INT,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
-    Email VARCHAR(50)
+    Email VARCHAR(50),
+    PRIMARY KEY (ID)
 );
 --rollback DROP TABLE Users;
 
 --changeset mate.acamemy:6 label:0.0.3
 CREATE INDEX EmailID ON Users (Email);
---rollback DROP TABLE Users;
+--rollback DROP INDEX EmailID ON Users;
